@@ -1,0 +1,23 @@
+import { firebaseConfig } from '../config/firebaseConfig';
+import { initializeApp, getApps } from 'firebase/app';
+import { getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+
+let _app:any = null;
+export function ensureApp(){
+  if(!_app){
+    _app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig as any);
+  }
+  return _app;
+}
+export function auth(){
+  ensureApp(); 
+  return getAuth();
+}
+export async function signInEmailPassword(email:string, password:string){
+  const a = auth();
+  return await signInWithEmailAndPassword(a, email, password);
+}
+export async function signOutAll(){
+  const a = auth();
+  return await signOut(a);
+}
