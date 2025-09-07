@@ -1,6 +1,7 @@
 import { firebaseConfig } from '../config/firebaseConfig';
-import { initializeApp, getApps } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, signOut } from from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
 
 let _app:any = null;
 export function ensureApp(){
