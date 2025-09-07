@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
-import { auth } from './firebaseAuth';
+import { auth } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 import { multiFactor } from 'firebase/auth';
 import { useNavigation } from '@react-navigation/native';
 const theme = require('../config/tameTheme').TameTheme;
